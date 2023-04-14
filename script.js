@@ -11,12 +11,17 @@ const lookup = {
 };
 
 function rot13(encodedStr){
-   let decodedArr = [];
+    let decodedArr = "";
   for (let val of encodedStr) {
-    decodedArr.push(lookup[val]);
+    // console.log(val);
+    if (lookup[val] === undefined) {
+      decodedArr += " ";
+    } else {
+      decodedArr += lookup[val];
+    }
   }
 
-  return decodedArr;//return decodedArr
+  return decodedArr;
 }
 
 // You can test your code by running the above function and printing
